@@ -1,0 +1,145 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+ComicCraft AI
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="hero">
+
+    <div>
+
+        <span class="badge">
+            GENERATIVE AI
+        </span>
+
+        <h1>
+            Create Your Own Comic
+        </h1>
+
+        <p>
+            Turn your idea into a complete
+            comic story with AI-generated
+            story panels and PDF export.
+        </p>
+
+    </div>
+
+
+    <form
+        action="/generate"
+        method="post"
+        class="comic-form"
+    >
+
+        <label>
+            Story Prompt
+        </label>
+
+        <textarea
+            name="story_prompt"
+            required
+            placeholder="Example: A student discovers a magical book..."
+        ></textarea>
+
+
+        <label>
+            Character Name
+        </label>
+
+        <input
+            type="text"
+            name="character_name"
+            required
+            placeholder="Arun"
+        >
+
+
+        <label>
+            Setting
+        </label>
+
+        <input
+            type="text"
+            name="setting"
+            required
+            placeholder="Enchanted Forest"
+        >
+
+
+        <label>
+            Tone
+        </label>
+
+        <select
+            name="tone"
+            required
+        >
+
+            <option>
+                Adventure
+            </option>
+
+            <option>
+                Funny
+            </option>
+
+            <option>
+                Mystery
+            </option>
+
+            <option>
+                Fantasy
+            </option>
+
+            <option>
+                Emotional
+            </option>
+
+        </select>
+
+
+        <label>
+            Art Style
+        </label>
+
+        <select
+            name="art_style"
+            required
+        >
+
+            <option>
+                Comic Book
+            </option>
+
+            <option>
+                Cartoon
+            </option>
+
+            <option>
+                Manga Inspired
+            </option>
+
+            <option>
+                Colorful Illustration
+            </option>
+
+        </select>
+
+
+        <button type="submit">
+
+            Generate Comic
+
+        </button>
+
+    </form>
+
+</section>
+
+{% endblock %}

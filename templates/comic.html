@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+{{ title }} | ComicCraft
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="comic-page">
+
+    <span class="badge">
+        COMIC GENERATED
+    </span>
+
+    <h1>
+        {{ title }}
+    </h1>
+
+
+    <div class="panel-grid">
+
+        {% for panel in panels %}
+
+        <article class="panel-card">
+
+            <img
+                src="{{ panel.image_url }}"
+                alt="Comic Panel {{ panel.number }}"
+            >
+
+            <div class="panel-content">
+
+                <h2>
+                    Panel {{ panel.number }}
+                </h2>
+
+                <p>
+                    <strong>Scene:</strong>
+                    {{ panel.scene }}
+                </p>
+
+                <p>
+                    <strong>Dialogue:</strong>
+                    {{ panel.dialogue }}
+                </p>
+
+                <p>
+                    <strong>Narration:</strong>
+                    {{ panel.narration }}
+                </p>
+
+            </div>
+
+        </article>
+
+        {% endfor %}
+
+    </div>
+
+
+    <div class="actions">
+
+        <a
+            class="button"
+            href="{{ pdf_url }}"
+            download
+        >
+            Download Comic PDF
+        </a>
+
+
+        <a
+            class="secondary-button"
+            href="/"
+        >
+            Create Another Comic
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

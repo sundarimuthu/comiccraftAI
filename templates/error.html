@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+
+{% block title %}
+
+ComicCraft Error
+
+{% endblock %}
+
+
+{% block content %}
+
+<section class="error-card">
+
+    <div class="badge">
+        ERROR
+    </div>
+
+    <h1>
+        Something went wrong
+    </h1>
+
+    <p>
+        {{ message }}
+    </p>
+
+    <a
+        class="button"
+        href="/"
+    >
+        Back to Home
+    </a>
+
+</section>
+
+{% endblock %}
